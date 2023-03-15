@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: monospace;
+    font-size: 28px;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    gap: 20px;
+}
+
+.respond-area b {
+    text-transform: capitalize;
+}
+
+a {
+    font-weight: 600;
+    color: white;
+    transition: all 200ms ease;
+}
+
+a:active,
+a:hover {
+    color: black;
+    text-shadow: 1px -1px 0px white;
+}

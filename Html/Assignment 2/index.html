@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="styles/index.css" />
+        <title>Portfolio</title>
+    </head>
+    <body>
+        <header>
+            <h1>Sayantan Sinharay</h1>
+        </header>
+        <main>
+            <section class="about">
+                <h2>About me.</h2>
+                <img
+                    src="assets/61086213.jpeg"
+                    alt="Sayantan Sinharay"
+                    width="200px"
+                />
+                <p>
+                    Hi there! I'm a skilled web designer and developer with a
+                    passion for creating beautiful and functional websites. With
+                    over 5 years of experience in the field, I have worked on a
+                    wide range of projects, from simple landing pages to complex
+                    e-commerce sites. <br />
+                    My expertise includes HTML, CSS, JavaScript, and WordPress,
+                    and I'm always up to date with the latest web design trends
+                    and technologies. I have a keen eye for design and can
+                    create custom illustrations and graphics that bring your
+                    website to life.
+                </p>
+                <a href="https://github.com/Sayantansinharay451"
+                    >Github profile</a
+                >
+            </section>
+            <section class="skill">
+                <h3>Programming languages/ Framework I know:</h3>
+                <ul class="skill__list">
+                    <li class="skill__listItem"><b>C</b></li>
+                    <li class="skill__listItem"><b>C++</b></li>
+                    <li class="skill__listItem"><b>HTML5</b></li>
+                    <li class="skill__listItem"><b>CSS3</b></li>
+                    <li class="skill__listItem"><b>Javascript</b></li>
+                    <li class="skill__listItem"><b>React</b></li>
+                    <li class="skill__listItem"><b>NodeJs</b></li>
+                    <li class="skill__listItem"><b>SQL</b></li>
+                </ul>
+            </section>
+            <section class="details">
+                <h3>Other Details</h3>
+                <table>
+                    <thead>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Address</th>
+                        <th>College</th>
+                        <th>Department</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Sayantan Sinharay</td>
+                            <td>21</td>
+                            <td>
+                                Holding No.477, Block-CC, Rabindra Kanan lane
+                                No.1, Post- Krishnapur, Police station- New
+                                Town, Land Mark- Near Chandiberia EWS Housing
+                                Complex, Kolkata, Pin-700102, West Bengal
+                            </td>
+                            <td>
+                                University of Engineering and Management, Jaipur
+                            </td>
+                            <td>B.tech (CSE)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+        <footer>
+            <h2>Contact me.</h2>
+            <form action="display.html" method="GET">
+                <label for="name">
+                    <b> Name : </b>
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="Your name"
+                        required
+                    />
+                </label>
+                <label for="email">
+                    <b> Email : </b>
+                    <input
+                        type="email"
+                        name="email"
+                        placeholder="Your email"
+                        required
+                    />
+                </label>
+                <button type="submit">Send</button>
+            </form>
+        </footer>
+    </body>
+    <script>
+        const formInputs = document.querySelectorAll("form input");
+        console.log(formInputs);
+        const form = document.querySelector("form");
+        form.addEventListener("submit", (ele) => {
+            ele.preventDefault();
+            formInputs.forEach((ele) => {
+                localStorage.setItem(ele.getAttribute("name"), ele.value);
+            });
+            form.submit();
+        });
+    </script>
+</html>

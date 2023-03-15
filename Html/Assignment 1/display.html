@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Respond</title>
+    </head>
+    <style>
+        * {
+            font-family: monospace;
+        }
+    </style>
+    <body>
+        <main class="respond-area"></main>
+        <br />
+        <a class="return-link" href="index.html"> &larr; Go back</a>
+    </body>
+    <script>
+        const respondArea = document.querySelector(".respond-area");
+        const returnLink = document.querySelector(".return-link");
+        window.addEventListener("load", () => {
+            for (let i = 0; i < localStorage.length; i++) {
+                const respond = document.createElement("span");
+                const respondName = document.createElement("b");
+                respondName.innerText = localStorage.key(i) + " : ";
+                respond.appendChild(respondName);
+                respond.innerHTML +=
+                    localStorage.getItem(localStorage.key(i)) + "</br>";
+                respondArea.appendChild(respond);
+            }
+        });
+        returnLink.addEventListener("click", () => {
+            localStorage.clear();
+        });
+    </script>
+</html>
