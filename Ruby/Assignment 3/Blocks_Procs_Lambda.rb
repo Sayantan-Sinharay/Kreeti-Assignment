@@ -39,8 +39,8 @@ def proc_vs_lambda
   a_lambda = -> { return "I will just terminate myself!" }
   puts "The Fight Begins!!!"
   puts a_lambda.call
-  a_proc.call
-  puts "The Winner is..." # Did not got executed
+  puts a_proc.call
+  return "The Winner is..." # Did not got executed
 end
 
 puts proc_vs_lambda
